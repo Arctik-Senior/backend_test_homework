@@ -9,7 +9,7 @@ try:
 except ModuleNotFoundError:
     assert False, 'Не найден файл с домашней работой `homework.py`'
 except NameError as exc:
-    name = re.findall("name '(\w+)' is not defined", str(exc))[0]
+    name = re.findall("name '(/w+)' is not defined", str(exc))[0]
     assert False, f'Класс {name} не обнаружен в файле домашней работы.'
 except ImportError:
     assert False, 'Не найден файл с домашней работой `homework.py`'
@@ -106,7 +106,8 @@ def test_Training():
     assert inspect.isclass(homework.Training), (
         '`Training` должен быть классом.'
     )
-    for attr, value in {'LEN_STEP': 0.65, 'M_IN_KM': 1000, 'MIN_IN_H': 60}.items():
+    for attr, value in {'LEN_STEP': 0.65,
+                        'M_IN_KM': 1000, 'MIN_IN_H': 60}.items():
         assert hasattr(homework.Training, attr), (
             f'У класса `Training` должен быть атрибут `{attr}`'
         )
@@ -148,7 +149,7 @@ def test_Training_get_distance(input_data, expected):
         'Создайте метод `get_distance` в классе `Training`.'
     )
     result = training.get_distance()
-    assert type(result) == float, (
+    assert isinstance(result) == float, (
         'Метод `get_distance` в классе `Trainig`'
         'должен возвращать значение типа `float`'
     )
@@ -168,7 +169,7 @@ def test_Training_get_mean_speed(input_data, expected):
         'Создайте метод `get_mean_speed` в классе `Training`.'
     )
     result = training.get_mean_speed()
-    assert type(result) == float, (
+    assert isinstance(result) == float, (
         'Метод `get_mean_speed` в классе `Training`'
         'должен возвращать значение типа `float`'
     )
@@ -276,7 +277,7 @@ def test_Swimming_get_mean(input_data, expected):
 def test_Swimming_get_spent_calories(input_data, expected):
     swimming = homework.Swimming(*input_data)
     result = swimming.get_spent_calories()
-    assert type(result) == float, (
+    assert isinstance(result) == float, (
         'Переопределите метод `get_spent_calories` в классе `Swimming`.'
     )
     assert result == expected, (
@@ -323,7 +324,7 @@ def test_SportsWalking():
 def test_SportsWalking_get_spent_calories(input_data, expected):
     sports_walking = homework.SportsWalking(*input_data)
     result = sports_walking.get_spent_calories()
-    assert type(result) == float, (
+    assert isinstance(result) == float, (
         'Переопределите метод `get_spent_calories` в классе `SportsWalking`.'
     )
     assert result == expected, (
@@ -338,7 +339,8 @@ def test_Running():
     assert issubclass(homework.Running, homework.Training), (
         'Класс `Running` должен наследоваться от класса `Training`.'
     )
-    for attr, value in {'CALORIES_MEAN_SPEED_MULTIPLIER': 18, 'CALORIES_MEAN_SPEED_SHIFT': 1.79}.items():
+    for attr, value in {'CALORIES_MEAN_SPEED_MULTIPLIER': 18,
+                        'CALORIES_MEAN_SPEED_SHIFT': 1.79}.items():
         assert hasattr(homework.Running, attr), (
             f'У класса `Running` должен быть атрибут `{attr}`'
         )
@@ -359,7 +361,7 @@ def test_Running_get_spent_calories(input_data, expected):
         'Создайте метод `get_spent_calories` в классе `Running`.'
     )
     result = running.get_spent_calories()
-    assert type(result) == float, (
+    assert isinstance(result) == float, (
         'Переопределите метод `get_spent_calories` в классе `Running`.'
     )
     assert result == expected, (

@@ -45,10 +45,6 @@ class Training:
         """Получить среднюю скорость движения."""
         return self.distance() / self.duration
 
-    def spent_calories(self) -> float:
-        """Получить количество затраченных калорий."""
-        ...
-
     def show_training_info(self):
         """Вернуть информационное сообщение о выполненной тренировке."""
         return InfoMessage(
