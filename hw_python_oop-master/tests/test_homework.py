@@ -87,7 +87,7 @@ def test_InfoMessage_get_message(input_data, expected):
         '`get_message` в классе `InfoMessage` должен быть методом.'
     )
     result = info_message.get_message()
-    assert type(result, str), (
+    assert isinstance(result, str), (
         'Метод `get_message` в классе `InfoMessage`'
         'должен возвращать значение типа `str`'
     )
