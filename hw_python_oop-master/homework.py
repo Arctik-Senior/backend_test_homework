@@ -152,14 +152,14 @@ class Swimming(Training):
 
 
 def read_package(workout_type: str, data: list):
-    trainigs = {
+    trainings = {
         "RUN": Running,
         "SWM": Swimming,
         "WLK": SportsWalking,
     }
 
-    assert workout_type in trainigs, "Не верно указан тип тренировки"
-    return trainigs[workout_type](*data)
+    assert workout_type in trainings, "Не верно указан тип тренировки"
+    return trainings[workout_type](*data)
 
 
 def main(training: Training):
