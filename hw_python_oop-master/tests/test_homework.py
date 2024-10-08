@@ -23,7 +23,7 @@ def test_read_package():
     assert callable(homework.read_package), (
         '`read_package` должна быть функцией.'
     )
-    assert isinstance(homework.read_package, types.FunctionType), (
+    assert type(homework.read_package, types.FunctionType), (
         '`read_package` должна быть функцией.'
     )
 
@@ -87,7 +87,7 @@ def test_InfoMessage_get_message(input_data, expected):
         '`get_message` в классе `InfoMessage` должен быть методом.'
     )
     result = info_message.get_message()
-    assert isinstance(result, str), (
+    assert type(result, str), (
         'Метод `get_message` в классе `InfoMessage`'
         'должен возвращать значение типа `str`'
     )
@@ -149,7 +149,7 @@ def test_Training_get_distance(input_data, expected):
         'Создайте метод `get_distance` в классе `Training`.'
     )
     result = training.get_distance()
-    assert isinstance(result) == float, (
+    assert type(result) == float, (
         'Метод `get_distance` в классе `Trainig`'
         'должен возвращать значение типа `float`'
     )
@@ -169,7 +169,7 @@ def test_Training_get_mean_speed(input_data, expected):
         'Создайте метод `get_mean_speed` в классе `Training`.'
     )
     result = training.get_mean_speed()
-    assert isinstance(result) == float, (
+    assert type(result) == float, (
         'Метод `get_mean_speed` в классе `Training`'
         'должен возвращать значение типа `float`'
     )
@@ -277,7 +277,7 @@ def test_Swimming_get_mean(input_data, expected):
 def test_Swimming_get_spent_calories(input_data, expected):
     swimming = homework.Swimming(*input_data)
     result = swimming.spent_calories()
-    assert isinstance(result) == float, (
+    assert type(result) == float, (
         'Переопределите метод `get_spent_calories` в классе `Swimming`.'
     )
     assert result == expected, (
@@ -324,7 +324,7 @@ def test_SportsWalking():
 def test_SportsWalking_get_spent_calories(input_data, expected):
     sports_walking = homework.SportsWalking(*input_data)
     result = sports_walking.get_spent_calories()
-    assert isinstance(result) == float, (
+    assert type(result) == float, (
         'Переопределите метод `get_spent_calories` в классе `SportsWalking`.'
     )
     assert result == expected, (
@@ -361,7 +361,7 @@ def test_Running_get_spent_calories(input_data, expected):
         'Создайте метод `get_spent_calories` в классе `Running`.'
     )
     result = running.get_spent_calories()
-    assert isinstance(result) == float, (
+    assert type(result) == float, (
         'Переопределите метод `get_spent_calories` в классе `Running`.'
     )
     assert result == expected, (
@@ -374,7 +374,7 @@ def test_main():
         'Создайте главную функцию программы с именем `main`.'
     )
     assert callable(homework.main), '`main` должна быть функцией.'
-    assert isinstance(homework.main, types.FunctionType), (
+    assert type(homework.main, types.FunctionType), (
         '`main` должна быть функцией.'
     )
 
