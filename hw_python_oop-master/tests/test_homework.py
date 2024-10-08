@@ -23,7 +23,7 @@ def test_read_package():
     assert callable(homework.read_package), (
         '`read_package` должна быть функцией.'
     )
-    assert type(homework.read_package, types.FunctionType), (
+    assert isinstance(homework.read_package, types.FunctionType), (
         '`read_package` должна быть функцией.'
     )
 
@@ -374,7 +374,7 @@ def test_main():
         'Создайте главную функцию программы с именем `main`.'
     )
     assert callable(homework.main), '`main` должна быть функцией.'
-    assert type(homework.main, types.FunctionType), (
+    assert isinstance(homework.main, types.FunctionType), (
         '`main` должна быть функцией.'
     )
 
