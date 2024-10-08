@@ -276,7 +276,7 @@ def test_Swimming_get_mean(input_data, expected):
 ])
 def test_Swimming_get_spent_calories(input_data, expected):
     swimming = homework.Swimming(*input_data)
-    result = swimming.spent_calories()
+    result = swimming.get_spent_calories()
     assert type(result) == float, (
         'Переопределите метод `get_spent_calories` в классе `Swimming`.'
     )

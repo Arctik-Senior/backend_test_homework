@@ -55,6 +55,10 @@ class Training:
             calories=self.get_spent_calories(),
         )
 
+    def get_spent_calories(self) -> float:
+        '''Получить количество колорий'''
+        pass
+
 
 class Running(Training):
     """Тренировка: бег."""
