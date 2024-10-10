@@ -22,7 +22,7 @@ class InfoMessage:
 
 
 class Training:
-    """Базовый класс тренировке."""
+    """Базовый класс тренировки."""
     LEN_STEP: float = 0.65
     M_IN_KM: int = 1000
     MIN_IN_H: int = 60
@@ -46,7 +46,7 @@ class Training:
         return self.get_distance() / self.duration
 
     def show_training_info(self):
-        """Верно информационное сообщение о выполненной тренировке."""
+        """Вернуть информационное сообщение о выполненной тренировке."""
         return InfoMessage(
             training_type=type(self).__name__,
             duration=self.duration,
@@ -56,7 +56,7 @@ class Training:
         )
 
     def get_spent_calories(self) -> float:
-        """Получить количество калорий."""
+        """Получить количество колорий."""
         pass
 
 
@@ -80,7 +80,7 @@ class Running(Training):
 
 
 class SportsWalking(Training):
-    """Тренировке: спортивная ходьба."""
+    """Тренировка: спортивная ходьба."""
     KMH_IN_MSEC: float = 0.278
     CM_IN_M: int = 100
     CALORIES_WEIGHT_MULTIPLIER: float = 0.035
@@ -158,7 +158,7 @@ def read_package(workout_type: str, data: list):
         "WLK": SportsWalking,
     }
 
-    assert workout_type in trainings, "Не верно указан тип тренировке"
+    assert workout_type in trainings, "Не верно указан тип тренировки"
     return trainings[workout_type](*data)
 
 
