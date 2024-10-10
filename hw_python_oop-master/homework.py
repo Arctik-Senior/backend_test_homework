@@ -13,11 +13,11 @@ class InfoMessage:
 
     def get_message(self) -> str:
         return (
-            f'Тип тренировки: {self.training_type}; '
-            f'Длительность: {"{:.3f}".format(self.duration)} ч.; '
-            f'Дистанция: {"{:.3f}".format(self.distance)} км; '
-            f'Ср. скорость: {"{:.3f}".format(self.speed)} км/ч; '
-            f'Потрачено ккал: {"{:.3f}".format(self.calories)}.'
+            f"Тип тренировке: {self.training_type}; "
+            f"Длительность: {"{:.3f}".format(self.duration)} ч.; "
+            f"Дистанция: {"{:.3f}".format(self.distance)} км; "
+            f"Ср. скорость: {"{:.3f}".format(self.speed)} км/ч; "
+            f"Потрачено ккал: {"{:.3f}".format(self.calories)}."
         )
 
 
@@ -38,7 +38,7 @@ class Training:
         self.weight = weight
 
     def get_distance(self) -> float:
-        """Получить пройденную дистанцию"""
+        """Получить пройденную дистанция"""
         return self.action * self.LEN_STEP / self.M_IN_KM
 
     def get_mean_speed(self) -> float:
@@ -56,7 +56,7 @@ class Training:
         )
 
     def get_spent_calories(self) -> float:
-        '''Получить количество колорий'''
+        """Получить количество колорий."""
         pass
 
 
@@ -91,7 +91,7 @@ class SportsWalking(Training):
                  duration: float,
                  weight: float,
                  height: float,
-                 ) -> None:
+                 ):
         super().__init__(action, duration, weight)
         self.height = height
 
@@ -163,16 +163,15 @@ def read_package(workout_type: str, data: list):
 
 
 def main(training: Training):
-    """Главная функция."""
     info = training.show_training_info()
     print(info.get_message())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     packages = [
-        ('SWM', [720, 1, 80, 25, 40]),
-        ('RUN', [15000, 1, 75]),
-        ('WLK', [9000, 1, 75, 180]),
+        ("SWM", [720, 1, 80, 25, 40]),
+        ("RUN", [15000, 1, 75]),
+        ("WLK", [9000, 1, 75, 180]),
     ]
 
     for workout_type, data in packages:

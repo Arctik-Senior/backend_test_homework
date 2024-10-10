@@ -18,12 +18,12 @@ class Capturing(list):
 
     def __enter__(self):
         self._stdout = sys.stdout
-        sys.stdout = self._stringio = StringIO()
+        sys.stdout = self._string = StringIO()
         return self
 
     def __exit__(self, *args):
-        self.extend(self._stringio.getvalue().splitlines())
-        del self._stringio
+        self.extend(self._string.getvalue().splitlines())
+        del self._string
         sys.stdout = self._stdout
 
 
